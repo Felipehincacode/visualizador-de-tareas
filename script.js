@@ -25,11 +25,14 @@ let quoteInterval;
 let quoteIndex = Math.floor(Math.random() * coderQuotes.length);
 let arrowTimeout, arrowTextTimeout;
 
+// Referencia global para poder limpiar el listener de parallax
+let parallaxMouseMove;
+
 // ===============================
 // Estado del loader para interacciones reversibles
 
-// Efectos de velocidad y motion blur para el texto 'task's'
-document.addEventListener('DOMContentLoaded', function() {
+// -------- Animaciones de introducción y parallax --------
+function introAnimations() {
   // Manejar la animación de entrada
   setTimeout(() => {
     document.querySelector('.white-flash').style.opacity = 0;
@@ -97,7 +100,7 @@ document.addEventListener('DOMContentLoaded', function() {
       speedText.appendChild(glowEffect);
 
       // Efecto al mover el mouse sobre el texto
-      document.addEventListener('mousemove', function(e) {
+      parallaxMouseMove = function(e) {
         // Cálculos para parallax basado en posición del mouse
         const moveX = (e.clientX - window.innerWidth / 2) / (window.innerWidth / 2);
         const moveY = (e.clientY - window.innerHeight / 2) / (window.innerHeight / 2);
@@ -110,7 +113,8 @@ document.addEventListener('DOMContentLoaded', function() {
         // Resplandor más intenso con movimiento
         const intensity = Math.sqrt(moveX * moveX + moveY * moveY);
         glowEffect.style.setProperty('--glow-opacity', 0.2 + intensity * 0.3);
-      });
+      };
+      document.addEventListener('mousemove', parallaxMouseMove);
 
       // Efectos al hacer clic
       speedText.addEventListener('click', function() {
@@ -126,8 +130,8 @@ document.addEventListener('DOMContentLoaded', function() {
       });
     }
   }
-});
-// ===============================
+}
+
 let loaderHidden = false; // <- NUEVO: indica si el loader está oculto
 
 // ===============================
@@ -138,6 +142,9 @@ document.addEventListener("DOMContentLoaded", () => {
   const padre = document.querySelector('.padre');
   const quoteBox = document.getElementById('nolan-quotes');
   const arrow = document.querySelector('.loader-arrow-glow');
+
+  // Llamamos a la animación de introducción (ahora función independiente)
+  introAnimations();
 
   // ===============================
   // Audio Setup
@@ -362,5 +369,16 @@ document.addEventListener("DOMContentLoaded", () => {
   });
   cardInner.addEventListener('transitionend', () => {
     cardInner.style.setProperty('--blur', '0px');
+  });
+
+  // ===============================
+  // LIMPIEZA de listeners para evitar fugas cuando se abandone la página
+  // ===============================
+  window.addEventListener('beforeunload', () => {
+    window.removeEventListener('scroll', handleScroll);
+    window.removeEventListener('keydown', handleKey);
+    if (parallaxMouseMove) {
+      document.removeEventListener('mousemove', parallaxMouseMove);
+    }
   });
 });
