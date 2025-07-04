@@ -216,6 +216,14 @@ document.addEventListener("DOMContentLoaded", () => {
     }, 8000); // Más tiempo para leer cada frase
   }
 
+  // Detiene la rotación de citas y limpia el intervalo para evitar fugas de memoria
+  function stopQuotes() {
+    if (quoteInterval) {
+      clearInterval(quoteInterval);
+      quoteInterval = null;
+    }
+  }
+
   function setupArrowTimers() {
     if (!arrow) return;
     // Rebote a los 10 s
