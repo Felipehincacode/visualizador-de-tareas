@@ -323,7 +323,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   // Obtener tareas desde json-server
-  fetch('http://localhost:3000/tasks')
+  fetch('/tasks')
     .then(res => res.json())
     .then(data => {
       data.forEach(tarea => {
