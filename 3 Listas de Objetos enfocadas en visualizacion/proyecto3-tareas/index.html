@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestor de Tareas</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="home-button">
+        <a href="../../../index.html" class="btn-home">🏠 Volver al Home</a>
+    </div>
+    <div class="container">
+        <header>
+            <h1>✅ Gestor de Tareas</h1>
+            <p>Organiza y gestiona tus tareas de manera eficiente</p>
+        </header>
+        
+        <div class="task-form">
+            <input type="text" id="taskInput" placeholder="Nueva tarea..." maxlength="100">
+            <button id="addTask" class="btn">Agregar Tarea</button>
+        </div>
+        
+        <div class="filters">
+            <button id="filterAll" class="filter-btn active">Todas</button>
+            <button id="filterPending" class="filter-btn">Pendientes</button>
+            <button id="filterCompleted" class="filter-btn">Completadas</button>
+        </div>
+        
+        <div class="tasks-container">
+            <div class="tasks-section">
+                <h2>📋 Mis Tareas</h2>
+                <div id="tasksList" class="tasks-list">
+                    <!-- Las tareas se generarán dinámicamente aquí -->
+                </div>
+            </div>
+            
+            <div class="stats-section">
+                <h3>📊 Estadísticas</h3>
+                <div class="stats">
+                    <div class="stat-item">
+                        <span class="stat-number" id="totalTasks">0</span>
+                        <span class="stat-label">Total</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number" id="completedTasks">0</span>
+                        <span class="stat-label">Completadas</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number" id="pendingTasks">0</span>
+                        <span class="stat-label">Pendientes</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html> 

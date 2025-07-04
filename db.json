@@ -1,0 +1,53 @@
+{
+  "tasks": [
+    {
+      "id": 1,
+      "title": "Operaciones con arrays",
+      "descripcion": "Contiene los primeros tres puntos del challenge: imprime colores favoritos de una lista, números y citas famosas",
+      "terminado": true,
+      "link": "./S2_javascript/1 arrays dom/index.html"
+    },
+    {
+      "id": 2,
+      "title": "Imprimir info desde objeto",
+      "descripcion": "Imprime datos de un array en una tabla",
+      "terminado": true,
+      "link": "./2 objetos pensados para mostrarse/producto/index.html"
+    },
+    {
+      "id": 3,
+      "title": "Reproductor de canciones",
+      "descripcion": "Imprime datos de un objeto en un reproductor que saqué de Codepen",
+      "terminado": true,
+      "link": "./2 objetos pensados para mostrarse/reproductor/index.html"
+    },
+    {
+      "id": 4,
+      "title": "Tarjeta empresarial",
+      "descripcion": "Imprime la información de los trabajadores de una empresa en una tabla",
+      "terminado": true,
+      "link": "./2 objetos pensados para mostrarse/tarjetas html css javascript/index.html"
+    },
+    {
+      "id": 5,
+      "title": "Lista de contactos",
+      "descripcion": "Imprime tarjetas de contactos con nombre y correo. También limpia la info",
+      "terminado": true,
+      "link": "./3 Listas de Objetos enfocadas en visualizacion/proyecto1-contactos/index.html"
+    },
+    {
+      "id": 6,
+      "title": "Biblioteca libros",
+      "descripcion": "Dado un array de libros con título, autor y año, transforma cada uno en una cadena formateada",
+      "terminado": true,
+      "link": "./3 Listas de Objetos enfocadas en visualizacion/proyecto2-libros/index.html"
+    },
+    {
+      "id": 7,
+      "title": "Tareas",
+      "descripcion": "Aplicación que hace un to_do",
+      "terminado": true,
+      "link": "./3 Listas de Objetos enfocadas en visualizacion/proyecto3-tareas/index.html"
+    }
+  ]
+}

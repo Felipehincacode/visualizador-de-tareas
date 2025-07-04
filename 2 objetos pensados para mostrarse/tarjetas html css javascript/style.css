@@ -1,0 +1,130 @@
+/* Botón Volver al Home */
+.home-button {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 1000;
+}
+
+.btn-home {
+    display: inline-block;
+    background: linear-gradient(135deg, #3498db, #2980b9);
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 25px;
+    font-weight: 600;
+    font-size: 14px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(52, 152, 219, 0.3);
+}
+
+.btn-home:hover {
+    background: linear-gradient(135deg, #2980b9, #1f5f8b);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(52, 152, 219, 0.4);
+}
+
+/* Estilos de la tarjeta principal */
+.card {
+ margin: auto;
+ margin-top: 200px;
+ width: 190px;
+ height: 320px;
+ background: #3405a3;
+ border-radius: 15px;
+ box-shadow: 1px 5px 60px 0px #100a886b;
+ transform: scale(2);
+}
+
+/* Borde decorativo superior de la tarjeta */
+.card .card-border-top {
+ width: 60%;
+ height: 3%;
+ background: #6b64f3;
+ margin: auto;
+ border-radius: 0px 0px 15px 15px;
+}
+
+/* Estilo para el nombre del perfil */
+.card span {
+ font-weight: 600;
+ color: white;
+ text-align: center;
+ display: block;
+ padding-top: 10px;
+ font-size: 16px;
+}
+
+/* Estilo para la ocupación */
+.card .job {
+ font-weight: 400;
+ color: white;
+ display: block;
+ text-align: center;
+ padding-top: 3px;
+ font-size: 12px;
+}
+
+/* Contenedor de la imagen de perfil */
+.card .img {
+ width: 70px;
+ height: 100px; 
+ border-radius: 15px;
+ margin: auto;
+ margin-top: 15px;
+ margin-bottom: 10px;
+}
+
+/* Estilo para la imagen de perfil */
+#foto {
+ width: 70px;
+ height: 100px;   
+}
+
+#foto:hover{
+    transform: scale(1.1);
+    transition: transform 0.3s ease;    
+}
+
+/* Estilo del botón */
+.card button {
+ padding: 8px 25px;
+ display: block;
+ margin: auto;
+ border-radius: 8px;
+ border: none;
+ margin-top: 15px;
+ background: #6b64f3;
+ color: white;
+ font-weight: 600;
+}
+
+/* Efecto hover del botón */
+.card button:hover {
+ background: #534bf3;
+}
+
+/* Contenedor del selector de perfiles */
+.profile-selector {
+    text-align: center;
+    margin-bottom: 20px;
+    transform: scale(2);
+    margin-top: 50px;
+}
+
+/* Estilo del select */
+.profile-selector select {
+    padding: 8px 15px;
+    border-radius: 5px;
+    border: 1px solid #6b64f3;
+    cursor: pointer;
+    background: white;
+    color: #3405a3;
+    font-weight: 500;
+}
+
+/* Efecto hover del select */
+.profile-selector select:hover {
+    border-color: #3405a3;
+}

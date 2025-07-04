@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Enlace al archivo de estilos CSS -->
+    <link rel="stylesheet" href="style.css">
+    <title>Tarjetas con nombre</title>
+</head>
+<body>
+    <div class="home-button">
+        <a href="../../../index.html" class="btn-home">🏠 Volver al Home</a>
+    </div>
+    <div class="container">
+        <header>
+            <h1>🛍️ Nuestros Productos</h1>
+            <p>Descubre nuestra increíble colección de productos</p>
+        </header>
+        
+        <div class="products-grid" id="productsGrid">
+            <!-- Los productos se generarán dinámicamente aquí -->
+        </div>
+    </div>
+    <!-- Contenedor del selector de perfiles -->
+    <div class="profile-selector">
+        <!-- Select para elegir el perfil, llama a selectProfile() cuando cambia -->
+        <select onchange="selectProfile(this.value)">
+            <option value="" disabled selected>Selecciona un perfil</option>
+            <!-- Opciones de perfiles, el value corresponde al índice en el array members -->
+            <option value="0">Juan</option>
+            <option value="1">Pedro</option>
+            <option value="2">Maria</option>
+            <option value="3">Ana</option>
+        </select>
+    </div>
+        
+    <!-- Tarjeta de perfil -->
+    <div class="card">
+        <!-- Borde decorativo superior -->
+        <div class="card-border-top">
+        </div>
+        <!-- Contenedor de la imagen de perfil -->
+        <div class="img">
+            <img class="img" id="foto" src="assets/img/1.jpeg" ondblclick="alert('¡Doble clic en la foto!')" alt="">
+        </div>
+        <!-- Información del perfil -->
+        <span id="name">nombre</span>
+        <span id="age">edad</span>
+        <p id="Ocupacion" class="job">Ocupacion</p>
+        <button>Click</button>
+    </div>
+    <!-- Enlace al archivo JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>

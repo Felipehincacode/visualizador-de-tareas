@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tarjetas de Tareas</title>
+  <link rel="stylesheet" href="style.css" />
+  <!-- Fuente imponente para el título -->
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@700&display=swap" rel="stylesheet">
+  <!-- Fuente para el texto minimalista -->
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <!-- Fuente futurista para las frases -->
+  <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;500&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Efecto de destello blanco inicial -->
+  <div class="white-flash"></div>
+  <!-- Audio Control -->
+  <div class="audio-control">
+    <button id="audioToggle" class="audio-btn">🔊</button>
+    <input type="range" id="volumeSlider" min="0" max="1" step="0.1" value="0.5" class="volume-slider">
+  </div>
+
+  <!-- Ventana de carga mejorada -->
+  <div id="loader" class="loader">
+    <div class="loader-bg animate-fade-in delay-700"></div>
+    <div class="loader-content">
+      <div id="speed-text" class="stencil-text animate-fade-in delay-1000">
+        <div id="typing-container" class="typing-container">
+          <!-- El texto task's se escribirá aquí mediante JavaScript -->
+        </div>
+      </div>
+      <div class="nolan-quotes animate-fade-in delay-1500" id="nolan-quotes"></div>
+      <!-- Flecha para indicar scroll -->
+      <div class="loader-arrow-glow animate-fade-in delay-2000"></div>
+    </div>
+  </div>
+
+  <!-- Fondo y contenido principal -->
+  <div class="padre hidden-on-load">
+    <!-- Selector de tareas -->
+    <div class="selector animate-fade-in delay-200">
+      <h1 class="animate-fade-in delay-400">Selecciona la tarea</h1>
+      <ul id="lista-tareas" class="animate-fade-in delay-600"></ul>
+    </div>
+
+    <!-- Tarjeta de tarea -->
+    <div class="tarjeta">
+      <div class="tarjeta-inner" id="tarjeta-inner">
+        <!-- Cara frontal (ya no hay gif) -->
+        <div class="tarjeta-front" id="cara-frontal"></div>
+        <!-- Cara trasera -->
+        <div class="tarjeta-back">
+          <h2 id="titulo"></h2>
+          <p id="descripcion"></p>
+          <p id="estatus"></p>
+          <a id="link" href="#" target="_blank"></a>
+          <div class="glow"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <audio id="bg-music" src="assets/432500__erokia__ambient-wave-3-harmonics.wav" loop preload="auto" style="display:none"></audio>
+  <script src="script.js"></script>
+</body>
+</html>
