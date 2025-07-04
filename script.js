@@ -158,15 +158,25 @@ document.addEventListener("DOMContentLoaded", () => {
   const audioToggle = document.getElementById('audioToggle');
   const volumeSlider = document.getElementById('volumeSlider');
 
-  audioToggle.addEventListener('click', () => {
+  function toggleAudio() {
     if (isPlaying) {
       audio.pause();
       audioToggle.textContent = '🔈';
+      audioToggle.setAttribute('aria-pressed', 'false');
     } else {
       audio.play();
       audioToggle.textContent = '🔊';
+      audioToggle.setAttribute('aria-pressed', 'true');
     }
     isPlaying = !isPlaying;
+  }
+
+  audioToggle.addEventListener('click', toggleAudio);
+  audioToggle.addEventListener('keydown', (e) => {
+    if (e.key === ' ' || e.key === 'Enter') {
+      e.preventDefault();
+      toggleAudio();
+    }
   });
 
   volumeSlider.addEventListener('input', (e) => {
@@ -335,13 +345,22 @@ document.addEventListener("DOMContentLoaded", () => {
     .then(data => {
       data.forEach(tarea => {
         const li = document.createElement('li');
+        li.tabIndex = 0; // accesibilidad: navegable por teclado
         li.textContent = tarea.title;
-        li.addEventListener('click', () => {
+        function mostrarTarea() {
           titulo.textContent = tarea.title;
           descripcion.textContent = tarea.descripcion;
           estatus.textContent = tarea.terminado ? '✅ Terminada' : '⏳ Pendiente';
           link.href = tarea.link;
           link.textContent = 'Ver tarea';
+        }
+
+        li.addEventListener('click', mostrarTarea);
+        li.addEventListener('keydown', (ev) => {
+          if (ev.key === 'Enter' || ev.key === ' ') {
+            ev.preventDefault();
+            mostrarTarea();
+          }
         });
         listaTareas.appendChild(li);
       });

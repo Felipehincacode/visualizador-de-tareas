@@ -5,20 +5,28 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Tarjetas de Tareas</title>
   <link rel="stylesheet" href="style.css" />
+  <!-- Preconexión para acelerar descarga de fuentes -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <!-- Fuente imponente para el título -->
   <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@700&display=swap" rel="stylesheet">
   <!-- Fuente para el texto minimalista -->
   <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
   <!-- Fuente futurista para las frases -->
   <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;500&display=swap" rel="stylesheet">
+  <!-- Preload del GIF de fondo principal -->
+  <link rel="preload" as="image" href="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExZXF4anl3bjZiYnlkZGNlaWRjeHN5bXdmMnE0OHA3cXZxbno5bDZzbCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/3o7aDcrsww5Ybp18hq/giphy.gif">
+  <!-- Preload del GIF del loader -->
+  <link rel="preload" as="image" href="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExMHg2andybGE3bDZ2dTF6enVhNmM5bmpmdHpiN3I5bjdkZ2J1aml1cSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/3og0IV7MOCfnm85iRa/giphy.gif">
+  <!-- Preload de audio de fondo -->
+  <link rel="preload" as="audio" href="assets/432500__erokia__ambient-wave-3-harmonics.wav">
 </head>
 <body>
   <!-- Efecto de destello blanco inicial -->
   <div class="white-flash"></div>
   <!-- Audio Control -->
   <div class="audio-control">
-    <button id="audioToggle" class="audio-btn">🔊</button>
-    <input type="range" id="volumeSlider" min="0" max="1" step="0.1" value="0.5" class="volume-slider">
+    <button id="audioToggle" class="audio-btn" aria-label="Reproducir / Pausar música" aria-pressed="false">🔊</button>
+    <input type="range" id="volumeSlider" min="0" max="1" step="0.1" value="0.5" class="volume-slider" aria-label="Control de volumen">
   </div>
 
   <!-- Ventana de carga mejorada -->
@@ -60,7 +68,7 @@
       </div>
     </div>
   </div>
-  <audio id="bg-music" src="assets/432500__erokia__ambient-wave-3-harmonics.wav" loop preload="auto" style="display:none"></audio>
+  <audio id="bg-music" src="assets/432500__erokia__ambient-wave-3-harmonics.wav" loop preload="auto" style="display:none" aria-hidden="true"></audio>
   <script src="script.js" defer></script>
 </body>
 </html>
